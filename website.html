@@ -47,7 +47,7 @@
         }
         
         .separator {
-            height: 10px; /* total thickness of the band */
+            height: 8px; /* total thickness of the band */
             background: #b30000;
             width: 100%;
             box-shadow: 0 1px 0 #0008 inset, 0 -1px 0 #0008 inset;
@@ -176,12 +176,34 @@
             border-radius: 0 0 8px 8px;
             color: var(--muted);
             font-size: 0.95em;
+            position: relative;            /* allow bottom-right positioning */
+            padding-bottom: 2.5em;         /* small buffer so content doesn't overlap image */
         }
         .bottom-section h3 {
             margin-top: 0;
             color: #ddd;
         }   
         a, a:visited { color: var(--accent); }
+
+        /* Bottom-right support image */
+        .support-image {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            width: min(28vw, 140px);
+            height: auto;
+            filter: drop-shadow(0 2px 6px #0009);
+            opacity: 0.95;
+        }
+
+        @media (max-width: 520px) {
+            .support-image {
+                width: 96px;
+            }
+            .bottom-section {
+                padding-bottom: 3.25em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -238,6 +260,13 @@
             <p>
                 Need help? Contact us at <a href="mailto:MooreGamesENK@outlook.com">MooreGames@outlook.com</a>
             </p>
+
+            <!-- Bottom-right image inside Support info -->
+            <img
+                class="support-image"
+                src="Steam/RomanAdvisor.png"
+                alt="Moore Games logo"
+            />
         </div>
     </main>
 
