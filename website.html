@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roman General - Game Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root{
+            --bg:#222;
+            --panel:#292929;
+            --panel-accent:#181818;
+            --text:#eee;
+            --muted:#ccc;
+            --gold:#d4af37; /* main title color (now handled in header art/logo) */
+            --accent:#f9b84a; /* link color */
+        }
+        *{box-sizing:border-box}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Full-width hero header using LibaryHero.png with overlaid LibaryLogo.png */
+        header.hero-header {
+            position: relative;
+            width: 100%;
+            background: #111;
+            overflow: hidden;
+        }
+        header.hero-header .hero-img {
+            width: 100%;
+            height: auto; /* preserves aspect ratio */
+            display: block;
+        }
+        header.hero-header .hero-logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: min(60%, 420px);
+            height: auto; /* preserves aspect ratio of the logo */
+            filter: drop-shadow(0 6px 24px #000a) drop-shadow(0 2px 6px #000a);
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .separator {
+            height: 10px; /* total thickness of the band */
+            background: #b30000;
+            width: 100%;
+            box-shadow: 0 1px 0 #0008 inset, 0 -1px 0 #0008 inset;
+        }
+
+        /* Trailer placeholder (uses a screenshot for now) */
+        .trailer {
+            max-width: 900px;
+            margin: 1.25em auto 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px #000a;
+            background: #000;
+            position: relative;
+        }
+        .trailer .frame {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+        .trailer .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(transparent, #0003 60%, #0006);
+            pointer-events: none; /* purely visual placeholder */
+        }
+        .trailer .play-btn {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: #ffffffcc;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 8px 30px #0009, 0 2px 10px #0009 inset;
+        }
+        .trailer .play-btn::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 24px solid #000;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+            margin-left: 6px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5em auto 2em;
+            background: var(--panel);
+            border-radius: 8px;
+            box-shadow: 0 2px 16px #1118;
+            padding: 2em;          
+            font-size: 1.125rem;   /* ~18px if browser default is 16px */
+            line-height: 1.6;
+        }
+
+        .game-art {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 2em auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #111a;
+        }
+
+        ul {
+            margin: 1em 0 2em;
+        }
+
+        /* Screenshot carousel */
+        .carousel {
+            position: relative;
+            margin: 2em auto 0;
+        }
+        .carousel .frame {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #111a;
+        }
+        .carousel .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #000c;
+            color: #fff;
+            font-size: 24px;
+            line-height: 42px;
+            text-align: center;
+            cursor: pointer;
+            padding: 0;
+            user-select: none;
+        }
+        .carousel .nav:hover { background: #000e; }
+        .carousel .prev { left: 10px; }
+        .carousel .next { right: 10px; }
+        .carousel .dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .carousel .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: #555;
+            cursor: pointer;
+            padding: 0;
+        }
+        .carousel .dot.active { background: #ddd; }
+
+        .bottom-section {
+            background: var(--panel-accent);
+            padding: 1.5em 2em;
+            margin-top: 2em;
+            border-radius: 0 0 8px 8px;
+            color: var(--muted);
+            font-size: 0.95em;
+        }
+        .bottom-section h3 {
+            margin-top: 0;
+            color: #ddd;
+        }   
+        a, a:visited { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header class="hero-header">
+        <img class="hero-img" src="Steam/LibaryHero.png" alt="Roman General Hero">
+        <img class="hero-logo" src="Steam/LibaryLogo.png" alt="Roman General Logo">
+    </header>
+
+    <div class="separator" aria-hidden="true"></div>
+
+    <!-- Trailer placeholder (screenshot stand-in) -->
+    <section class="trailer" aria-label="Game trailer (placeholder)">
+        <img
+            class="frame"
+            src="Steam/Screenshots/Screenshot%202025-09-12%20164224.png"
+            alt="Trailer placeholder screenshot"
+        >
+        <div class="play-overlay" aria-hidden="true">
+            <div class="play-btn"></div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Removed title and tagline – they’re now handled in the header -->
+
+        <img class="game-art" src="Steam/HeaderCapsual.png" alt="Event Artwork">
+
+        <p>
+            <strong>Roman General</strong> 
+        </p>
+        <ul>
+            <li>A hex based strategy game set in the time of the Roman Republic. Fight through numerous historical wars and campaigns to experience the rise of one of the worlds greatest empires.    
+        </ul>
+
+        <!-- Screenshot carousel replacing the single bottom image -->
+        <section class="carousel" aria-label="Screenshots">
+            <button class="nav prev" aria-label="Previous screenshot">‹</button>
+            <img
+                id="screenshot-frame"
+                class="frame"
+                src="Steam/Screenshots/Screenshot%202025-09-12%20164020.png"
+                alt="Screenshot 1"
+            >
+            <button class="nav next" aria-label="Next screenshot">›</button>
+            <div class="dots" id="screenshot-dots" aria-label="Screenshot navigation dots"></div>
+        </section>
+
+        <div class="bottom-section">
+            <h3>Company Info</h3>
+            <p>
+                Roman General is developed by Moore Games.<br>
+            </p>
+            <h3>Support</h3>
+            <p>
+                Need help? Contact us at <a href="mailto:MooreGamesENK@outlook.com">MooreGames@outlook.com</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Simple screenshot carousel
+        const screenshots = [
+            "Steam/Screenshots/Screenshot%202025-09-12%20163605.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20163624.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20163633.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20164020.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20164126.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20164146.png",
+            "Steam/Screenshots/Screenshot%202025-09-12%20164224.png"
+        ];
+
+        const frame = document.getElementById("screenshot-frame");
+        const dotsContainer = document.getElementById("screenshot-dots");
+        const prevBtn = document.querySelector(".carousel .prev");
+        const nextBtn = document.querySelector(".carousel .next");
+
+        let index = 0;
+
+        function render() {
+            frame.src = screenshots[index];
+            frame.alt = `Screenshot ${index + 1}`;
+            [...dotsContainer.children].forEach((d, i) => {
+                d.classList.toggle("active", i === index);
+            });
+        }
+
+        function buildDots() {
+            dotsContainer.innerHTML = "";
+            screenshots.forEach((_, i) => {
+                const b = document.createElement("button");
+                b.className = "dot" + (i === 0 ? " active" : "");
+                b.setAttribute("aria-label", `Go to screenshot ${i + 1}`);
+                b.addEventListener("click", () => {
+                    index = i;
+                    render();
+                });
+                dotsContainer.appendChild(b);
+            });
+        }
+
+        prevBtn.addEventListener("click", () => {
+            index = (index - 1 + screenshots.length) % screenshots.length;
+            render();
+        });
+        nextBtn.addEventListener("click", () => {
+            index = (index + 1) % screenshots.length;
+            render();
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowLeft") { prevBtn.click(); }
+            if (e.key === "ArrowRight") { nextBtn.click(); }
+        });
+
+        buildDots();
+        render();
+    </script>
+</body>
+</html>
