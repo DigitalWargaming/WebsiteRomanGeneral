@@ -53,7 +53,7 @@
             box-shadow: 0 1px 0 #0008 inset, 0 -1px 0 #0008 inset;
         }
 
-        /* Trailer placeholder (uses a screenshot for now) */
+        /* Trailer section - now for YouTube embed */
         .trailer {
             max-width: 900px;
             margin: 1.25em auto 0;
@@ -63,37 +63,19 @@
             background: #000;
             position: relative;
         }
-        .trailer .frame {
+        .trailer .youtube-container {
+            position: relative;
             width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            display: block;
-        }
-        .trailer .play-overlay {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(transparent, #0003 60%, #0006);
-            pointer-events: none; /* purely visual placeholder */
-        }
-        .trailer .play-btn {
-            width: 84px;
-            height: 84px;
-            border-radius: 50%;
-            background: #ffffffcc;
-            display: grid;
-            place-items: center;
-            box-shadow: 0 8px 30px #0009, 0 2px 10px #0009 inset;
-        }
-        .trailer .play-btn::before {
-            content: "";
-            width: 0;
             height: 0;
-            border-left: 24px solid #000;
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
-            margin-left: 6px;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+        .trailer .youtube-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         main {
@@ -254,16 +236,14 @@
 
     <!-- Game trailer video -->
     <section class="trailer" aria-label="Game trailer">
-        <video
-            class="frame"
-            controls
-            preload="metadata"
-            muted="false"
-            poster="Graphics/Screenshots/Screenshot%202025-10-08%20172620.png"
-        >
-            <source src="Graphics/RomanGeneralTrailer1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="youtube-container">
+            <iframe
+                src="https://www.youtube.com/embed/j8M8PMXDBBY"
+                title="Roman General - Game Trailer"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            </iframe>
+        </div>
     </section>
 
     <main>
