@@ -169,6 +169,44 @@
         }
         .carousel .dot.active { background: #ddd; }
 
+        /* Steam Wishlist Section */
+        .steam-wishlist {
+            text-align: center;
+            margin: 2em 0;
+            padding: 2em;
+            background: var(--panel-accent);
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+        }
+        .steam-wishlist h3 {
+            margin: 0 0 1em 0;
+            color: var(--text);
+            font-size: 1.5em;
+        }
+        .steam-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #4c6c92;
+        }
+        .steam-button:hover {
+            background: linear-gradient(135deg, #2a475e 0%, #1b2838 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+        .steam-button span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
         .bottom-section {
             background: var(--panel-accent);
             padding: 1.5em 2em;
@@ -220,6 +258,7 @@
             class="frame"
             controls
             preload="metadata"
+            muted="false"
             poster="Graphics/Screenshots/Screenshot%202025-10-08%20172620.png"
         >
             <source src="Graphics/RomanGeneralTrailer1.mp4" type="video/mp4">
@@ -250,6 +289,14 @@
             >
             <button class="nav next" aria-label="Next screenshot">›</button>
             <div class="dots" id="screenshot-dots" aria-label="Screenshot navigation dots"></div>
+        </section>
+
+        <!-- Steam Wishlist Section -->
+        <section class="steam-wishlist" aria-label="Steam wishlist">
+            <h3>Wishlist now on Steam</h3>
+            <a href="https://store.steampowered.com/app/4010340" class="steam-button" target="_blank" rel="noopener">
+                Wishlist on Steam
+            </a>
         </section>
 
         <div class="bottom-section">
