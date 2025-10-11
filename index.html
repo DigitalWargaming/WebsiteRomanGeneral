@@ -208,28 +208,29 @@
 </head>
 <body>
     <header class="hero-header">
-        <img class="hero-img" src="Steam/LibaryHero.png" alt="Roman General Hero">
-        <img class="hero-logo" src="Steam/LibaryLogo.png" alt="Roman General Logo">
+        <img class="hero-img" src="Graphics/LibaryHero.png" alt="Roman General Hero">
+        <img class="hero-logo" src="Graphics/LibaryLogo.png" alt="Roman General Logo">
     </header>
 
     <div class="separator" aria-hidden="true"></div>
 
-    <!-- Trailer placeholder (screenshot stand-in) -->
-    <section class="trailer" aria-label="Game trailer (placeholder)">
-        <img
+    <!-- Game trailer video -->
+    <section class="trailer" aria-label="Game trailer">
+        <video
             class="frame"
-            src="Steam/Screenshots/Screenshot%202025-09-12%20164224.png"
-            alt="Trailer placeholder screenshot"
+            controls
+            preload="metadata"
+            poster="Graphics/Screenshots/Screenshot%202025-10-08%20172620.png"
         >
-        <div class="play-overlay" aria-hidden="true">
-            <div class="play-btn"></div>
-        </div>
+            <source src="Graphics/RomanGeneralTrailer1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
 
     <main>
         <!-- Removed title and tagline – they’re now handled in the header -->
 
-        <img class="game-art" src="Steam/HeaderCapsual.png" alt="Event Artwork">
+        <img class="game-art" src="Graphics/HeaderCapsual.png" alt="Event Artwork">
 
         <p>
             <strong>Roman General</strong> 
@@ -244,7 +245,7 @@
             <img
                 id="screenshot-frame"
                 class="frame"
-                src="Steam/Screenshots/Screenshot%202025-09-12%20164020.png"
+                src="Graphics/Screenshots/Screenshot%202025-09-12%20164020.png"
                 alt="Screenshot 1"
             >
             <button class="nav next" aria-label="Next screenshot">›</button>
@@ -260,26 +261,27 @@
             <p>
                 Need help? Contact us at <a href="mailto:MooreGamesENK@outlook.com">MooreGames@outlook.com</a>
             </p>
-
-            <!-- Bottom-right image inside Support info -->
-            <img
-                class="support-image"
-                src="Steam/RomanAdvisor.png"
-                alt="Moore Games logo"
-            />
         </div>
     </main>
 
     <script>
         // Simple screenshot carousel
         const screenshots = [
-            "Steam/Screenshots/Screenshot%202025-09-12%20163605.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20163624.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20163633.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20164020.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20164126.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20164146.png",
-            "Steam/Screenshots/Screenshot%202025-09-12%20164224.png"
+            "Graphics/Screenshots/Screenshot%202025-10-08%20162856.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163140.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163222.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163458.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163505.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163630.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163711.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20163937.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20164201.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20172003.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20172222.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20172242.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20172522.png",
+            "Graphics/Screenshots/Screenshot%202025-10-08%20172620.png",
+            "Graphics/Screenshots/Screenshot%202025-10-11%20112400.png"
         ];
 
         const frame = document.getElementById("screenshot-frame");
