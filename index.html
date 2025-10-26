@@ -189,6 +189,44 @@
             font-size: 1.2em;
         }
 
+        /* Discord Join Section */
+        .discord-join {
+            text-align: center;
+            margin: 2em 0;
+            padding: 2em;
+            background: var(--panel-accent);
+            border-radius: 8px;
+            border: 2px solid #5865f2;
+        }
+        .discord-join h3 {
+            margin: 0 0 1em 0;
+            color: var(--text);
+            font-size: 1.5em;
+        }
+        .discord-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #5865f2 0%, #4752c4 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #7983f5;
+        }
+        .discord-button:hover {
+            background: linear-gradient(135deg, #4752c4 0%, #5865f2 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+        .discord-button span {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
         .bottom-section {
             background: var(--panel-accent);
             padding: 1.5em 2em;
@@ -276,6 +314,14 @@
             <h3>Wishlist now on Steam</h3>
             <a href="https://store.steampowered.com/app/4010340/RomanGeneral" class="steam-button" target="_blank" rel="noopener">
                 Wishlist on Steam
+            </a>
+        </section>
+
+        <!-- Discord Join Section -->
+        <section class="discord-join" aria-label="Join Discord">
+            <h3>Join the Discord Community</h3>
+            <a href="https://discord.gg/9HAjXUxQBn" class="discord-button" target="_blank" rel="noopener">
+                Join Discord
             </a>
         </section>
 
